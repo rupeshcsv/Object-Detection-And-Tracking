@@ -5,7 +5,7 @@ import cv2
 cap = cv2.VideoCapture('cars_feed.mp4')
 
 # Removing static background for motion detection
-object_detector = cv2.createBackgroundSubtractorMOG2(history=100, varThreshold=30)
+object_detector = cv2.createBackgroundSubtractorMOG2(history=100, varThreshold=20)
 
 while True:
 	ret, frame = cap.read()
@@ -24,10 +24,12 @@ while True:
 			# cv2.drawContours(roi, [cnt], -1, (255, 0, 0), 2)
 			x, y, w, h = cv2.boundingRect(cnt)
 			cv2.rectangle(roi, (x, y), (x+w, y+h), (255, 0, 0), 2)
+			cv2.putText(roi, 'Vehicle', (x, y-15), cv2.FONT_HERSHEY_PLAIN, 1, (0, 20, 255), 2)
 
 	# display frame
 	try:
 		# cv2.imshow("ROI", roi)
+
 		cv2.imshow("Mask applied on Region Of Interest", mask)
 		cv2.imshow("Detection on Original Video", frame)
 	except:
