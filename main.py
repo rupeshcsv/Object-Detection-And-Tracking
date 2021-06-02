@@ -23,8 +23,8 @@ while True:
 		if area > 200:
 			# cv2.drawContours(roi, [cnt], -1, (255, 0, 0), 2)
 			x, y, w, h = cv2.boundingRect(cnt)
-			# cv2.rectangle(roi, (x, y), (x+w, y+h), (255, 0, 0), 2)
-			# cv2.putText(roi, 'Vehicle', (x, y-15), cv2.FONT_HERSHEY_PLAIN, 1, (0, 20, 255), 2)
+			cv2.rectangle(roi, (x, y), (x+w, y+h), (255, 0, 0), 2)
+			cv2.putText(roi, 'Vehicle', (x, y-15), cv2.FONT_HERSHEY_PLAIN, 1, (0, 20, 255), 2)
 
 	# display frame
 	try:

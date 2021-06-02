@@ -16,5 +16,9 @@ Since the contours on detected vehicles will have a much larger area than the no
 
 Since the camera feeds often capture a large angle of the street and the surrounding area, some other types of false positives like pedestrians walking on sidewalks or trees moving due to wind might trigger the motion detecting contours. To avoid this, we consider an area of the video where we are sure that only vehicles will be observed and will be observed clearly. Ideally, this should be an area of the street close to the camera through which all vehicles are sure to pass through.
 
+<img src='images/roi_output.png'/>
 
+## Output
+
+<img src='images/output.png'/>
 
