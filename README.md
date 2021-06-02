@@ -6,11 +6,15 @@ This project aims to detect vehicles on a street or highway using the video feed
 
 Since the background is static, and the vehicles change position from frame to frame, eliminating the static pixels from the frames can help us detect motion in the video feed. Background Subtractor from CV2 is used to change all static pixels to black.
 
+<img src='images/motion_output.png'/>
+
 ## Eliminating Noise
 
 Even after applying the background subtractor, some pixels from the static area of the video trigger the motion detection due to some external conditions like lighting, wind, shadows and reflections. To remove this noise, an area filter is used to differentiate between detected vehicles and false positives.
 
 Since the contours on detected vehicles will have a much larger area than the noise, we set a threshold to display these contour detections on the original feed. In case of the example considered here, a value of 200 seems to work well. All the contours that have an area less than 200 will not be displayed.
+
+<img src='images/mask_output.png'/>
 
 ## Region of Interest
 
